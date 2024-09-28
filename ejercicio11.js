@@ -45,3 +45,19 @@ const users = [
     },
   },
 ];
+
+//Creo un objeto llamado soundCounts nuevo que almacenará cuantas veces ese sonido se ha guardado en favoritos
+
+const soundCounts = {};
+
+for (const user of users) {
+  for (const sound in user.favoritesSounds) {
+    if (soundCounts[sound]) {
+      soundCounts[sound]++;
+    } else {
+      soundCounts[sound] = 1;
+    }
+  }
+}
+
+console.log(soundCounts);
