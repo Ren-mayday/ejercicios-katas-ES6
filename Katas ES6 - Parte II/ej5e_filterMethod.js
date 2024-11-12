@@ -10,6 +10,21 @@ const streamers = [
   { name: "AuronPlay", age: 33, gameMorePlayed: "Among Us" },
 ];
 
-const inputValue = streamers.filter((streamer) => {
-  console.log("Iteración:", streamer);
+// Paso 1: Seleccionar el input del DOM usando querySelector:
+const input = document.querySelector(
+  'input[data-function="toFilterStreamers"]'
+);
+
+// Paso 2: agregar un evento 'input' para escuchar cuando el usuario escribe
+input.addEventListener("input", () => {
+  // Variable para almacenar el texto ingresado por el usuario, convertido a minúsculas
+  const searchText = input.value.toLowerCase(); // Convertimos a minúsculas para hacer la búsqueda case-insensitive
+
+  // Paso 3: Filtrar los streamers cuyo nombre incluye el texto introducido
+  const filteredStreamers = streamers.filter((streamer) =>
+    streamer.name.toLowerCase().includes(searchText)
+  );
+
+  // Paso 4: Mostrar los streamers filtrados en la consola
+  console.log("Streamers encontrados;", filteredStreamers);
 });
