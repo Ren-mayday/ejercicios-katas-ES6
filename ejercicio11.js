@@ -53,8 +53,11 @@ const soundCounts = {};
 for (const user of users) {
   for (const sound in user.favoritesSounds) {
     if (soundCounts[sound]) {
+      // Si en el objeto, en la iteración existe el sonido súmamos 1. Ej: en la primera iteración sería soundCounts['waves'],
+      // la segunda interación soundCounts['rain'], etc.
       soundCounts[sound]++;
     } else {
+      // en caso contrario y en la iteración es la primera vez que aparece ese sonido empezamos el contador a 1
       soundCounts[sound] = 1;
     }
   }

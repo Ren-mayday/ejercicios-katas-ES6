@@ -8,7 +8,7 @@ const cities = [
   { isVisited: false, name: "Seul" },
 ];
 
-let nameOfCitiesVisited = cities.map(function (city) {
+let nameOfCitiesVisited = cities.map((city) => {
   console.log("Iteración:", city);
   if (city.isVisited === true) {
     console.log(`Nombre original: ${city.name}`);

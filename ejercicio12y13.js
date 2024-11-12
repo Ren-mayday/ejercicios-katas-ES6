@@ -3,10 +3,13 @@ cuando el valor del array sea igual al valor del texto que enviaste como paramet
 
 Haz varios ejemplos y compruebalos.
 
-Sugerencia de función:
-function findArrayIndex(array, text) {} 
+Sugerencia de función: */
+function findArrayIndex(array, text) {
+  const index = array.findIndex((arrayString) => arrayString === text);
+  return index;
+}
 
-Ej array: */
+//Ej array:
 const mainCharacters = [
   "Luke",
   "Leia",
@@ -16,6 +19,8 @@ const mainCharacters = [
   "Anakin",
   "Obi-Wan",
 ];
+
+console.log(findArrayIndex(mainCharacters, "Rey"));
 
 /*
 Usando la función anterior beneficiate de poder conocer el indice del array 
@@ -29,3 +34,19 @@ Finalmente retorna el array.
 
 De nuevo haz varios ejemplos para practicar y comprueba que funcionan 
 correctamente. */
+
+const removeItems = (array, text) => {
+  const index = findArrayIndex(array, text);
+  // Comprobar si el índice es válido, si index es (-1), no es válido, no se encuentra el texto
+  if (index === -1) {
+    console.log(`El elemento ${text} no se encontró en el array`);
+    return array; // devuelve el array sin cambios
+  }
+
+  // Eliminar el elemento con splice
+  array.splice(index, 1);
+  return array;
+};
+
+console.log(removeItems(mainCharacters, "Luke"));
+console.log(removeItems(mainCharacters, "Jabba el Hutt"));

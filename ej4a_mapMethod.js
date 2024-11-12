@@ -6,7 +6,7 @@ const users = [
   { id: 4, name: "Amanda" },
 ];
 
-let nameOfUsers = users.map(function (user) {
+let nameOfUsers = users.map((user) => {
   return user.name;
 });
 

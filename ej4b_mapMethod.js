@@ -8,7 +8,7 @@ const users = [
   { id: 4, name: "Amanda" },
 ];
 
-let nameOfUsers = users.map(function (user) {
+let nameOfUsers = users.map((user) => {
   if (user.name.startsWith("A")) {
     return "Anacleto";
   } else {
